@@ -172,10 +172,14 @@ function calcMoney() {
     }
   });
   return_btn.addEventListener('click', () => {
-    PossessionAmount += total;
-    Possession.textContent = PossessionAmount;
-    balanceCount.textContent = '0';
-    total = 0;
+    if (total > 0) {
+      PossessionAmount += total;
+      Possession.textContent = PossessionAmount;
+      balanceCount.textContent = '0';
+      total = 0;
+    } else {
+      alert('잔액이 없습니다');
+    }
   });
 }
 
